@@ -1,0 +1,1366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/html_css-bcon_58-html-css-team-project/sofa-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Modern and minimalist furniture for you"
+    />
+    <title>Minimal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+    />
+    <!-- Critical CSS -->
+    <style>
+      :root {
+        --blue: #0a224a;
+        --active: #061835;
+        --dark-grey: #7a7a7a;
+        --gray: #b6b6b6;
+        --light-gray: #d9d9d9;
+        --section-bg: #f7faff;
+        --white: #ffffff;
+        --centered: 0 auto;
+        --time: 0.25s;
+        --cubic: cubic-bezier(0.4, 0, 0.2, 1);
+        --shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+          rgba(0, 0, 0, 0.22) 0px 10px 10px;
+      }
+
+      body {
+        font-family: Roboto, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: var(--blue);
+        scroll-behavior: smooth;
+      }
+
+      @media only screen and (min-width: 768px) {
+        body {
+          font-size: 18px;
+        }
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        white-space: nowrap;
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+      }
+
+      .subtitle {
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 1.5;
+        text-transform: uppercase;
+      }
+
+      @media only screen and (min-width: 768px) {
+        .subtitle {
+          font-size: 32px;
+          line-height: 1.41;
+        }
+      }
+
+      .main-btn {
+        display: inline-block;
+        min-height: 50px;
+        min-width: 224px;
+        max-width: 300px;
+        padding: 12px 65px;
+        color: var(--white);
+        background-color: var(--blue);
+        border: none;
+        line-height: 1.5;
+        text-align: center;
+        white-space: normal;
+        transition:
+          background-color var(--time) var(--cubic),
+          box-shadow var(--time) var(--cubic);
+      }
+
+      .main-btn:hover,
+      .main-btn:focus {
+        background-color: var(--active);
+        box-shadow:
+          #00000040 0 14px 28px,
+          #00000038 0 10px 10px;
+      }
+
+      @media only screen and (min-width: 768px) {
+        .main-btn {
+          padding: 13px 65px;
+          line-height: 1.33;
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        .logo {
+          width: 127px;
+          height: 16px;
+        }
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin: 0;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      a {
+        color: currentColor;
+        text-decoration: none;
+      }
+
+      button {
+        cursor: pointer;
+        padding: 0;
+      }
+
+      img,
+      svg {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .container {
+        margin: var(--centered);
+        min-width: 320px;
+        max-width: 375px;
+        padding: 0 16px;
+      }
+
+      @media only screen and (min-width: 768px) {
+        .container {
+          max-width: 768px;
+          padding: 0 32px;
+        }
+      }
+
+      @media only screen and (min-width: 1440px) {
+        .container {
+          max-width: 1440px;
+          padding: 0 60px;
+        }
+      }
+
+      header {
+        background-color: var(--section-bg);
+        top: 0;
+        position: sticky;
+        z-index: 10;
+        border-bottom: 4px solid white;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 28px;
+        padding-bottom: 28px;
+      }
+
+      .header-nav {
+        display: none;
+      }
+
+      .header-nav-list {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        border: none;
+        background-color: transparent;
+      }
+
+      .burger-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border: none;
+        stroke: #0a224a;
+      }
+
+      .burger-btn:hover,
+      .burger-btn:focus {
+        background-color: transparent;
+      }
+
+      @media only screen and (min-width: 767.98px) {
+        .burger-btn {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      @media only screen and (min-width: 1440px) {
+        .header-container {
+          padding-top: 26px;
+          padding-bottom: 26px;
+        }
+
+        .burger-btn {
+          display: none;
+        }
+
+        .header-nav {
+          display: flex;
+        }
+
+        .header-nav-list {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+        }
+
+        .header-menu-link {
+          padding: 8px 0;
+        }
+
+        .header-menu-link:hover,
+        .header-menu-link:focus {
+          color: #4d5ae5;
+          transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        .hero {
+          padding-top: 64px;
+          padding-bottom: 50px;
+        }
+      }
+
+      .hero-container {
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      @media only screen and (max-width: 767.98px) {
+        .hero-container {
+          height: 717px;
+          padding-top: 140px;
+          padding-bottom: 313px;
+          background-image: url(/html-css-team-project/assets/img-1_mob-36920f2b.jpg);
+          background-size: cover;
+        }
+      }
+
+      @media only screen and (min-resolution: 192dpi) and (max-width: 767.98px) {
+        .hero-container {
+          background-image: url(/html-css-team-project/assets/img-1_mob@2x-49835762.jpg);
+        }
+      }
+
+      @media only screen and (min-width: 768px) {
+        .hero-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 700px;
+          background-image: url(/html-css-team-project/assets/img-1_tab-25b5d36a.jpg),
+            url(/html-css-team-project/assets/img-2_tab-8d4cc631.jpg);
+          background-size:
+            308px 329px,
+            356px 532px;
+          background-position:
+            left 32px top 202px,
+            right 32px top 0px;
+        }
+      }
+
+      @media only screen and (min-resolution: 192dpi) and (min-width: 768px) {
+        .hero-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 700px;
+          background-image: url(/html-css-team-project/assets/img-1_tab@2x-f18ad2f4.jpg),
+            url(/html-css-team-project/assets/img-2_tab@2x-08525ab3.jpg);
+          background-size:
+            308px 329px,
+            356px 532px;
+          background-position:
+            left 32px top 202px,
+            right 32px top 0px;
+        }
+      }
+
+      @media only screen and (min-width: 1440px) {
+        .hero-container {
+          height: 530px;
+          background-image: url(/html-css-team-project/assets/img-1_desk-47fe12af.jpg),
+            url(/html-css-team-project/assets/img-2_desk-bb8bca13.jpg),
+            url(/html-css-team-project/assets/img-3_desk-e1a1b89f.jpg);
+          background-size:
+            310px 329px,
+            648px 530px,
+            312px 337px;
+          background-position:
+            left 60px bottom 0,
+            left 395px bottom 0,
+            right 60px top 0;
+          animation: background-position 0.5s linear;
+          animation-delay: 0.1s;
+          animation-fill-mode: both;
+        }
+
+        @keyframes background-position {
+          0% {
+            background-position:
+              left 60px bottom -349px,
+              left 395px bottom 0,
+              right 60px top -357px;
+          }
+
+          to {
+            background-position:
+              left 60px bottom 0,
+              left 395px bottom 0,
+              right 60px top 0;
+          }
+        }
+      }
+
+      @media only screen and (min-resolution: 192dpi) and (min-width: 1440px) {
+        .hero-container {
+          background-image: url(/html-css-team-project/assets/img-1_desk@2x-eccfd9bf.jpg),
+            url(/html-css-team-project/assets/img-2_desk@2x-9322ed5c.jpg),
+            url(/html-css-team-project/assets/img-3_desk@2x-2165f932.jpg);
+        }
+      }
+
+      .hero-title {
+        width: 285px;
+        margin-bottom: 14px;
+        font-family: Playfair Display;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 28px;
+      }
+
+      @media only screen and (min-width: 768px) {
+        .hero-title {
+          width: 648px;
+          margin-bottom: 0;
+          font-size: 50px;
+        }
+      }
+
+      @media only screen and (min-width: 1440px) {
+        .hero-thumb-container {
+          align-self: flex-end;
+        }
+      }
+
+      .hero-text {
+        margin-bottom: 28px;
+      }
+
+      @media only screen and (min-width: 768px) {
+        .hero-text {
+          width: 312px;
+          margin-bottom: 30px;
+        }
+      }
+
+      .about-section {
+        background-color: var(--section-bg);
+        padding-top: 64px;
+      }
+
+      @media screen and (min-width: 768px) {
+        .about-section {
+          background-color: var(--white);
+          padding-top: 50px;
+          padding-bottom: 50px;
+        }
+      }
+
+      @media screen and (max-width: 767.98px) {
+        .about-container {
+          padding: 0;
+        }
+      }
+
+      @media screen and (min-width: 1440px) {
+        .about-container {
+          column-gap: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .about-info-wrapper {
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-bottom: 64px;
+      }
+
+      @media screen and (min-width: 768px) {
+        .about-info-wrapper {
+          padding: 36px 64px;
+          margin-bottom: 30px;
+          background-color: var(--section-bg);
+        }
+      }
+
+      @media screen and (min-width: 1440px) {
+        .about-info-wrapper {
+          padding: 36px 68px;
+          margin-bottom: 0;
+          background-color: var(--section-bg);
+          height: 500px;
+        }
+      }
+
+      .about-title {
+        display: flex;
+        max-width: 124px;
+        align-items: center;
+        gap: 20px;
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 30px;
+      }
+
+      @media screen and (min-width: 768px) {
+        .about-title {
+          display: inline-flex;
+        }
+      }
+
+      .about-title:before {
+        display: block;
+        content: '';
+        width: 30px;
+        height: 1px;
+        background-color: var(--blue);
+      }
+
+      .about-subtitle {
+        max-width: 343px;
+        margin-bottom: 30px;
+      }
+
+      @media screen and (min-width: 768px) {
+        .about-subtitle {
+          max-width: 576px;
+          font-size: 32px;
+          line-height: 1.4;
+        }
+      }
+
+      @media screen and (min-width: 1440px) {
+        .about-subtitle {
+          max-width: 622px;
+          font-size: 32px;
+          line-height: 1.4;
+        }
+      }
+
+      .about-subtitle-text {
+        max-width: 343px;
+        margin-bottom: 30px;
+      }
+
+      @media screen and (min-width: 768px) {
+        .about-subtitle-text {
+          max-width: 576px;
+          font-size: 18px;
+        }
+      }
+
+      @media screen and (min-width: 1440px) {
+        .about-subtitle-text {
+          max-width: 622px;
+          font-size: 18px;
+        }
+      }
+
+      .about-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      @media screen and (min-width: 768px) {
+        .about-list {
+          display: flex;
+          flex-direction: row;
+          gap: 33px;
+        }
+      }
+
+      @media screen and (min-width: 1440px) {
+        .about-list {
+          gap: 56px;
+        }
+      }
+
+      .about-item-statistic {
+        max-width: 170px;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+
+      @media screen and (min-width: 1440px) {
+        .about-item-statistic {
+          margin-bottom: 20px;
+        }
+      }
+
+      .about-item-text {
+        max-width: 170px;
+        text-align: center;
+      }
+
+      @media screen and (min-width: 768px) {
+        .about-item-text {
+          font-size: 18px;
+        }
+      }
+      .mobile-menu {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        background-color: var(--white);
+        transform: translate(-100%);
+        transition: transform var(--time) var(--cubic);
+      }
+
+      .is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+      }
+
+      .wrap-header {
+        display: flex;
+        padding: 28px 16px;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--section-bg);
+      }
+
+      .mobile-menu-navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 114px;
+        padding-bottom: 365px;
+      }
+
+      .mobile-menu-nav-list-item {
+        text-align: center;
+        font-size: 16px;
+        line-height: 1.5em;
+        padding-bottom: 17px;
+      }
+
+      .mobile-menu-link {
+        padding: 8px;
+      }
+
+      .mobile-menu-close-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border: none;
+        stroke: #0a224a;
+      }
+
+      .mobile-menu-nav-list-item:last-child {
+        padding-bottom: 0;
+      }
+
+      .mobile-menu.is-open {
+        transform: translate(0);
+      }
+
+      .mobile-menu-link:hover,
+      .mobile-menu-link:focus {
+        color: #4d5ae5;
+        transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      @media only screen and (min-width: 767.98px) {
+        .header-logo-icon {
+          width: 127px;
+        }
+
+        .wrap-header {
+          min-height: 95px;
+          padding-left: 32px;
+          padding-right: 32px;
+          gap: 537px;
+        }
+
+        .mobile-menu-close-btn {
+          width: 40px;
+          height: 40px;
+        }
+
+        .mobile-menu-navigation {
+          padding-top: 150px;
+          padding-bottom: 450px;
+        }
+
+        .mobile-menu-nav-list-item {
+          font-size: 18px;
+          padding-bottom: 30px;
+        }
+
+        .mobile-menu-nav-list-item:last-child {
+          padding-bottom: 0;
+        }
+      }
+    </style>
+    
+    <script type="module" crossorigin src="/html_css-bcon_58-html-css-team-project/assets/index-28ac9e73.js"></script>
+    <link rel="stylesheet" href="/html_css-bcon_58-html-css-team-project/assets/index-b73f6963.css">
+  </head>
+
+  <body>
+    <header>
+      <div class="container header-container">
+  <a class="header-logo link" href="./index.html">
+    <svg class="header-logo-icon" width="127" height="16" aria-label="logo">
+      <use href="/html_css-bcon_58-html-css-team-project/assets/sprite-a74dc092.svg#icon-logo"></use>
+    </svg>
+  </a>
+
+  <nav class="header-nav">
+    <ul class="header-nav-list">
+      <li class="header-nav-item">
+        <a class="header-menu-link" href="#about-us">About us</a>
+      </li>
+      <li class="header-nav-item">
+        <a class="header-menu-link" href="#products">Our products</a>
+      </li>
+      <li class="header-nav-item">
+        <a class="header-menu-link" href="#prices">Prices</a>
+      </li>
+      <li class="header-nav-item">
+        <a class="header-menu-link" href="#bestsellers">Bestsellers</a>
+      </li>
+      <li class="header-nav-item">
+        <a class="header-menu-link" href="#reviews">Reviews</a>
+      </li>
+      <li class="header-nav-item">
+        <a class="header-menu-link" href="#contacts">Contacts</a>
+      </li>
+    </ul>
+  </nav>
+
+  <button
+    class="burger-btn mobile-menu-link js-open-menu"
+    type="button"
+    aria-label="open order icon"
+  >
+    <svg class="burger-btn-icon" width="32" height="32">
+      <use href="/html_css-bcon_58-html-css-team-project/assets/sprite-a74dc092.svg#icon-burger"></use>
+    </svg>
+  </button>
+</div>
+
+    </header>
+    <main>
+      <section class="hero scrollto">
+  <div class="container hero-container">
+    <h1 class="hero-title">Modern and minimalist furniture for you</h1>
+    <div class="hero-thumb-container">
+      <p class="hero-text">
+        Add a touch of elegance to your space with handcrafted furniture pieces
+      </p>
+      <a href="#subscribe" class="main-btn">Subscribe</a>
+    </div>
+  </div>
+</section>
+      <section class="about-section scrollto" id="about-us">
+  <div class="about-container container">
+    <div class="about-info-wrapper">
+      <h2 class="about-title">About us</h2>
+      <h3 class="about-subtitle subtitle">
+        Our craftsmanship: creating unique handmade furniture
+      </h3>
+      <p class="about-subtitle-text">
+        Discover the inspiration behind our modern and minimalist designs, and
+        see how we bring them to life through our skilled craftsmanship.
+      </p>
+      <ul class="about-list">
+        <li class="about-list-item">
+          <p class="about-item-statistic">
+            <span class="number" data-val="5" data-proc="0">0+</span>
+          </p>
+          <p class="about-item-text">
+            Years of experience creating handcrafted furniture
+          </p>
+        </li>
+        <li class="about-list-item">
+          <p class="about-item-statistic">
+            <span class="number" data-val="100" data-proc="1">0%</span>
+          </p>
+          <p class="about-item-text">
+            Sustainably sourced materials used in all of our furniture
+          </p>
+        </li>
+        <li class="about-list-item">
+          <p class="about-item-statistic">
+            <span class="number" data-val="500" data-proc="0">0+</span>
+          </p>
+          <p class="about-item-text">
+            Unique furniture designs crafted by our skilled artisans
+          </p>
+        </li>
+      </ul>
+    </div>
+    <div class="about-image-wrapper">
+      <picture>
+        <!-- desktop screen -->
+        <source
+          media="(min-width:1440px)"
+          srcset="/html_css-bcon_58-html-css-team-project/assets/img-1_desk-9d45398d.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-1_desk@2x-9cb8ca4f.jpg 2x"
+          width="536"
+          height="540"
+        />
+        <!-- tablet screen -->
+        <source
+          media="(min-width:768px)"
+          srcset="/html_css-bcon_58-html-css-team-project/assets/img-1_tab-74f43634.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-1_tab@2x-9bd6a67d.jpg 2x"
+          width="704"
+          height="540"
+        />
+        <!-- phone screen -->
+        <source
+          media="(max-width:767.98px)"
+          srcset="/html_css-bcon_58-html-css-team-project/assets/img-1_mob-62f3e4ab.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-1_mob@2x-a4ef4e6d.jpg 2x"
+          width="375"
+          height="400"
+        />
+        <img
+          class="about-image"
+          src="/html_css-bcon_58-html-css-team-project/assets/img-1_tab-74f43634.jpg"
+          loading="lazy"
+          alt="Part of interior with sofa and high chair"
+          width="704"
+          height="540"
+        />
+      </picture>
+    </div>
+  </div>
+</section>
+
+      <section class="price scrollto" id="prices">
+    <div class="container price-container">
+        <h2 class="visually-hidden">Chairs Tables Dressers Sofas Price</h2>
+        <ul class="price-block">
+            <li class="price-item  subtitle">
+                <a class="price-link" href="#">Chairs
+                </a>
+                <span class="price-cost">from 200$</span>
+            </li>
+            <li class="price-item subtitle">
+                <a class="price-link" href="#">Tables
+                </a>
+                <span class="price-cost">from 250$</span>
+            </li>
+            <li class="price-item subtitle">
+                <a class="price-link" href="#">Dressers
+                </a>
+                <span class="price-cost">from 300$</span>
+            </li>
+            <li class="price-item subtitle">
+                <a class="price-link" href="#">Sofas
+                </a>
+                <span class="price-cost">from 500$</span>
+            </li>
+        </ul>
+    </div>
+</section>
+      <section class="products-section scrollto" id="products">
+  <div class="container products-container">
+    <h2 class="products-title subtitle">OUR PRODUCTS</h2>
+    <ul class="products-list">
+      <li class="products-item">
+        <a href="#" class="products-link">
+          <div class="backdrop-wrapper">
+            <picture>
+              <!-- desktop screen -->
+              <source media="(min-width:1440px)" srcset="/html_css-bcon_58-html-css-team-project/assets/img-1_desk-705d89b0.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-1_desk@2x-52370955.jpg 2x" width="343" height="300" />
+              <!-- tablet screen -->
+              <source media="(min-width:768px)" srcset="/html_css-bcon_58-html-css-team-project/assets/img-1_tab-6e19e3c3.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-1_tab@2x-832a53f8.jpg 2x" width="344" height="300" />
+              <!-- phone screen -->
+              <source media="(max-width:767.98px)" srcset="/html_css-bcon_58-html-css-team-project/assets/img-1_mob-abbb98fb.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-1_mob@2x-e54aabe0.jpg 2x" width="312" height="300" />
+              <img class="products-img" src="/html_css-bcon_58-html-css-team-project/assets/img-1_desk-705d89b0.jpg" loading="lazy" alt="DRESSERS from 300$" width="343" height="300" />
+            </picture>
+            <p class="backdrop-text">
+              DRESSERS <br />
+              from 300$
+            </p>
+          </div>
+          <div class="box-subtitle">
+            <h3 class="products-subtitle">Minimalist storage solutions</h3>
+          </div>
+        </a>
+      </li>
+      <li class="products-item">
+        <a href="#" class="products-link">
+          <div class="backdrop-wrapper">
+            <picture>
+              <!-- desktop screen -->
+              <source media="(min-width:1440px)" srcset="/html_css-bcon_58-html-css-team-project/assets/img-2_desk-2c20353c.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-2_desk@2x-ace12c84.jpg 2x" width="343" height="300" />
+              <!-- tablet screen -->
+              <source media="(min-width:768px)" srcset="/html_css-bcon_58-html-css-team-project/assets/img-2_tab-a850561a.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-2_tab@2x-a6d89c37.jpg 2x" width="344" height="300" />
+              
+              <img class="products-img" src="/html_css-bcon_58-html-css-team-project/assets/img-2_desk-2c20353c.jpg" loading="lazy" alt="SOFAS from 500$" width="343" height="300" />
+            </picture>
+            <p class="backdrop-text">
+              SOFAS <br />
+              from 500$
+            </p>
+          </div>
+          <div class="box-subtitle">
+            <h3 class="products-subtitle">Handcrafted minimalist seating</h3>
+          </div>
+        </a>
+      </li>
+      <li class="products-item">
+        <a href="#" class="products-link">
+          <div class="backdrop-wrapper">
+            <picture>
+              <!-- desktop screen -->
+              <source media="(min-width:1440px)" srcset="/html_css-bcon_58-html-css-team-project/assets/img-3_desk-1f941807.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-3_desk@2x-69459e17.jpg 2x" width="343" height="300" />
+              
+              <img class="products-img" src="/html_css-bcon_58-html-css-team-project/assets/img-3_desk-1f941807.jpg" loading="lazy" alt="TABLES from 250$" width="343" height="300" />
+            </picture>
+            <p class="backdrop-text">
+              TABLES <br />
+              from 250$
+            </p>
+          </div>
+          <div class="box-subtitle">
+            <h3 class="products-subtitle">Sleek and simple tables</h3>
+          </div>
+        </a>
+      </li>
+      <li class="products-item">
+        <a href="#" class="products-link">
+          <div class="backdrop-wrapper">
+            <picture>
+              <!-- desktop screen -->
+              <source media="(min-width:1440px)" srcset="/html_css-bcon_58-html-css-team-project/assets/img-4_desk-09e33057.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-4_desk@2x-5cd9f983.jpg 2x" width="343" height="300" />
+              
+              <img class="products-img" src="/html_css-bcon_58-html-css-team-project/assets/img-4_desk-09e33057.jpg"  loading="lazy" alt="CHAIRS from 200$" width="343" height="300" />
+            </picture>
+            <p class="backdrop-text">
+              CHAIRS <br />
+              from 200$
+            </p>
+          </div>
+          <div class="box-subtitle">
+            <h3 class="products-subtitle">
+              Minimalist seating for every space
+            </h3>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+      <section class="bestsellers-section scrollto" id="bestsellers">
+  <div class="container bestsellers-container">
+    <h2 class="bestsellers-section-title subtitle">Bestsellers</h2>
+    <div class="all-bestsellers-wrapper">
+      <div class="main-bestseller-wrapper">
+        <picture>
+          <!-- desktop screen -->
+          <source
+            media="(min-width:1440px)"
+            srcset="/html_css-bcon_58-html-css-team-project/assets/img-1_desk-0a5bf5d0.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-1_desk@2x-fc6b48bb.jpg 2x"
+            width="536"
+            height="489"
+          />
+          <!-- tablet screen -->
+          <source
+            media="(min-width:768px)"
+            srcset="/html_css-bcon_58-html-css-team-project/assets/img-1_tab-bd51c945.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-1_tab@2x-ff3a3ba1.jpg 2x"
+            width="704"
+            height="489"
+          />
+          <!-- phone screen -->
+          <source
+            media="(max-width:767.98px)"
+            srcset="/html_css-bcon_58-html-css-team-project/assets/img-1_mob-a7ceb6ed.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-1_mob@2x-03ddfd51.jpg 2x"
+            width="343"
+            height="193"
+          />
+          <img
+            class="main-bestseller-image"
+            src="/html_css-bcon_58-html-css-team-project/assets/img-1_tab-bd51c945.jpg"
+            loading="lazy"
+            alt="Bedroom"
+            width="704"
+            height="489"
+          />
+        </picture>
+        <h3 class="main-bestseller-title">The modern platform bed</h3>
+        <p class="main-bestseller-price">750$</p>
+      </div>
+
+      <!-- <div class="other-bestsellers-wrapper"> -->
+      <ul class="other-bestsellers-list">
+        <li class="other-bestsellers-item">
+          <picture>
+            <!-- desktop screen -->
+            <source
+              media="(min-width:1440px)"
+              srcset="/html_css-bcon_58-html-css-team-project/assets/img-2_desk-5e33b603.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-2_desk@2x-bce9925e.jpg 2x"
+              width="258"
+              height="193"
+            />
+            <!-- tablet screen -->
+            <source
+              media="(min-width:768px)"
+              srcset="/html_css-bcon_58-html-css-team-project/assets/img-2_tab-7e88986e.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-2_tab@2x-c59e0f60.jpg 2x"
+              width="336"
+              height="193"
+            />
+            <!-- phone screen -->
+            <source
+              media="(max-width:767.98px)"
+              srcset="/html_css-bcon_58-html-css-team-project/assets/img-2_mob-71938c01.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-2_mob@2x-9c019182.jpg 2x"
+              width="343"
+              height="193"
+            />
+            <img
+              class="other-bestsellers-image"
+              src="/html_css-bcon_58-html-css-team-project/assets/img-2_mob-71938c01.jpg"
+              loading="lazy"
+              alt="Lounge chairs"
+              width="343"
+              height="193"
+            />
+          </picture>
+          <h3 class="other-bestsellers-title">The Cozy Lounge Chair</h3>
+          <p class="other-bestsellers-price">230$</p>
+        </li>
+        <li class="other-bestsellers-item">
+          <picture>
+            <!-- desktop screen -->
+            <source
+              media="(min-width:1440px)"
+              srcset="/html_css-bcon_58-html-css-team-project/assets/img-3_desk-bdfaebc6.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-3_desk@2x-fb5cb1e3.jpg 2x"
+              width="258"
+              height="193"
+            />
+            <!-- tablet screen -->
+            <source
+              media="(min-width:768px)"
+              srcset="/html_css-bcon_58-html-css-team-project/assets/img-3_tab-e2a97f34.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-3_tab@2x-d2127e4f.jpg 2x"
+              width="336"
+              height="193"
+            />
+            <!-- phone screen -->
+            <source
+              media="(max-width:767.98px)"
+              srcset="/html_css-bcon_58-html-css-team-project/assets/img-3_mob-dffac1b2.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-3_mob@2x-3ba4e229.jpg 2x"
+              width="343"
+              height="193"
+            />
+            <img
+              class="other-bestsellers-image"
+              src="/html_css-bcon_58-html-css-team-project/assets/img-3_mob-dffac1b2.jpg"
+              loading="lazy"
+              alt="Industrial chair"
+              width="343"
+              height="193"
+            />
+          </picture>
+          <h3 class="other-bestsellers-title">The industrial accent chair</h3>
+          <p class="other-bestsellers-price">250$</p>
+        </li>
+        <li class="other-bestsellers-item bestsellers-item-hidden">
+          <picture>
+            <!-- desktop screen -->
+            <source
+              media="(min-width:1440px)"
+              srcset="/html_css-bcon_58-html-css-team-project/assets/img-4_desk-91763924.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-4_desk@2x-80b2ce63.jpg 2x"
+              width="258"
+              height="193"
+            />
+            <!-- tablet screen -->
+            <source
+              media="(min-width:768px)"
+              srcset="/html_css-bcon_58-html-css-team-project/assets/img-4_tab-6ae61c27.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-4_tab@2x-8164ac6d.jpg 2x"
+              width="336"
+              height="193"
+            />
+            <img
+              class="other-bestsellers-image"
+              src="/html_css-bcon_58-html-css-team-project/assets/img-4_tab-6ae61c27.jpg"
+              loading="lazy"
+              alt="Stand"
+              width="336"
+              height="193"
+            />
+          </picture>
+          <h3 class="other-bestsellers-title">The sleek stand</h3>
+          <p class="other-bestsellers-price">300$</p>
+        </li>
+        <li class="other-bestsellers-item bestsellers-item-hidden">
+          <picture>
+            <!-- desktop screen -->
+            <source
+              media="(min-width:1440px)"
+              srcset="/html_css-bcon_58-html-css-team-project/assets/img-5_desk-96839c4b.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-5_desk@2x-462937ca.jpg 2x"
+              width="258"
+              height="193"
+            />
+            <!-- tablet screen -->
+            <source
+              media="(min-width:768px)"
+              srcset="/html_css-bcon_58-html-css-team-project/assets/img-5_tab-f15b090a.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-5_tab@2x-47768ee1.jpg 2x"
+              width="336"
+              height="193"
+            />
+            <img
+              class="other-bestsellers-image"
+              src="/html_css-bcon_58-html-css-team-project/assets/img-5_tab-f15b090a.jpg"
+              loading="lazy"
+              alt="Sofa"
+              width="336"
+              height="193"
+            />
+          </picture>
+          <h3 class="other-bestsellers-title">The minimalist sofa</h3>
+          <p class="other-bestsellers-price">650$</p>
+        </li>
+      </ul>
+    </div>
+    <!-- </div> -->
+  </div>
+</section>
+
+      <section class="client-reviews scrollto" id="reviews">
+    <div class="container client-reviews-container">
+        <h2 class="subtitle">Clients reviews</h2>
+        <ul class="client-reviews-list">
+            <li class="client-reviews-item">
+                <div class="client-reviews-item-block">
+                    <picture>
+                        <!-- desktop screen -->
+                        <source media="(min-width:1440px)"
+                            srcset="/html_css-bcon_58-html-css-team-project/assets/img-1_desk-5ecf9b72.png 1x, /html_css-bcon_58-html-css-team-project/assets/img-1_desk@2x-91258f49.png 2x" width="56"
+                            height="56">
+
+                        <!-- tablet screen -->
+                        <source media="(min-width:768px)"
+                            srcset="/html_css-bcon_58-html-css-team-project/assets/img-1_desk-5ecf9b72.png 1x, /html_css-bcon_58-html-css-team-project/assets/img-1_desk@2x-91258f49.png 2x" width="56"
+                            height="56">
+
+                        <!-- phone screen -->
+                        <source media="(max-width:767.98px)"
+                            srcset="/html_css-bcon_58-html-css-team-project/assets/img-1_mob-d08ba70c.png 1x, /html_css-bcon_58-html-css-team-project/assets/img-1_mob@2x-fb743b54.png 2x" width="48"
+                            height="48">
+
+                        <img src="/html_css-bcon_58-html-css-team-project/assets/img-1_desk-5ecf9b72.png" alt="clients-avatar" width="56" height="56"
+                            loading="lazy">
+                    </picture>
+                    <div class="client-reviews-text-wrapper">
+                        <p class="client-name">Alexandra dream</p>
+                        <span class="clients-last-visit">1 week ago</span>
+                    </div>
+                </div>
+                <p class="client-review-text">I was blown away by the quality and craftsmanship of the furniture I
+                    received from this company. Each piece was unique and beautifully designed, and you can tell that a
+                    lot of thought and care goes into every detail. </p>
+            </li>
+            <li class="client-reviews-item">
+                <div class="client-reviews-item-block">
+                    <picture>
+                        <!-- desktop screen -->
+                        <source media="(min-width:1440px)"
+                            srcset="/html_css-bcon_58-html-css-team-project/assets/img-2_desk-3db27e58.png 1x, /html_css-bcon_58-html-css-team-project/assets/img-2_desk@2x-1681671e.png 2x" width="56"
+                            height="56">
+
+                        <!-- tablet screen -->
+                        <source media="(min-width:768px)"
+                            srcset="/html_css-bcon_58-html-css-team-project/assets/img-2_desk-3db27e58.png 1x, /html_css-bcon_58-html-css-team-project/assets/img-2_desk@2x-1681671e.png 2x" width="56"
+                            height="56">
+
+                        <img src="/html_css-bcon_58-html-css-team-project/assets/img-2_desk-3db27e58.png" alt="clients-avatar" width="56" height="56"
+                            loading="lazy">
+                    </picture>
+                    <div class="client-reviews-text-wrapper">
+                        <p class="client-name">James Williams </p>
+                        <span class="clients-last-visit">A week ago</span>
+                    </div>
+                </div>
+                <p class="client-review-text">The "Minimal" furniture set is a fantastic addition to my home. It
+                    boasts
+                    a minimalist design, enhancing the feel and look of my living space. The sturdy construction is
+                    worth noting too, which speaks volumes about its durability. </p>
+
+            </li>
+            <li class="client-reviews-item">
+                <div class="client-reviews-item-block">
+                    <picture>
+                        <!-- desktop screen -->
+                        <source media="(min-width:1440px)"
+                            srcset="/html_css-bcon_58-html-css-team-project/assets/img-3_desk-ca110adb.png 1x, /html_css-bcon_58-html-css-team-project/assets/img-3_desk@2x-8be6fb4d.png 2x" width="56"
+                            height="56">
+
+                        <img src="/html_css-bcon_58-html-css-team-project/assets/img-3_desk-ca110adb.png" alt="clients-avatar" width="56" height="56"
+                            loading="lazy">
+                    </picture>
+                    <div class="client-reviews-text-wrapper">
+                        <p class="client-name">Emily Watson</p>
+                        <span class="clients-last-visit">3 week ago</span>
+                    </div>
+                </div>
+                <p class="client-review-text">The "Minimal" furniture set has far exceeded my expectations. The
+                    sleek
+                    design combined with the high-quality materials have not only added an exceptional aesthetic to
+                    my
+                    space but also offered an uncompromising standard of comfort.</p>
+
+            </li>
+        </ul>
+    </div>
+</section>
+      <section class="section-subscription scrollto" id="subscribe">
+  <div class="container subscription-container">
+    <div class="form-desktop">
+      <h2 class="subtitle title-subscription">Newsletter</h2>
+      <p class="subscription-text">
+        Every week we will send you new designs and information about sales.
+      </p>
+      <form class="form-container">
+        <label for="user-name" class="form-label">
+          <input class="form-input" type="text" name="user-name" required minlength="2" maxlength="16"
+            placeholder="Name" id="user-name" />
+          <svg class="form-icon" width="20" height="20">
+            <use href="/html_css-bcon_58-html-css-team-project/assets/sprite-a74dc092.svg#icon-error"></use>
+          </svg>
+        </label>
+
+        <label for="user-email" class="form-label">
+          <input class="form-input" type="email" name="form-email" required minlength="2" maxlength="16"
+            placeholder="E-mail" id="user-email" />
+          <svg class="form-icon" width="20" height="20">
+            <use href="/html_css-bcon_58-html-css-team-project/assets/sprite-a74dc092.svg#icon-error"></use>
+          </svg>
+        </label>
+
+        <div class="checkbox-container">
+          <input type="checkbox" name="user-privacy" value="true" id="user-privacy"
+            class="visually-hidden form-checkbox" />
+          <label for="user-privacy" class="checkbox-text">
+            <span class="form-icon-span"><svg class="icon-check" width="13" height="13">
+                <use href="/html_css-bcon_58-html-css-team-project/assets/sprite-a74dc092.svg#icon-check"></use>
+              </svg>
+            </span>
+            <span>Agree to subscribe to the newsletter</span></label>
+        </div>
+        <button class="main-btn" type="submit">Send</button>
+      </form>
+    </div>
+    <div class="subscription-image">
+      <picture>
+        <!-- desktop -->
+        <source media="(min-width:1440px)" srcset="/html_css-bcon_58-html-css-team-project/assets/img-1_desk-5448da90.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-1_desk@2x-7b42b1a1.jpg 2x"
+        />
+        <!-- tablet -->
+        <source media="(min-width:768px)" srcset="/html_css-bcon_58-html-css-team-project/assets/img-1_tab-268e4411.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-1_tab@2x-e7008100.jpg 2x"
+        />
+        <!-- phone -->
+        <source media="(max-width:767.98px)" srcset="/html_css-bcon_58-html-css-team-project/assets/img-1_mob-70bbca82.jpg 1x, /html_css-bcon_58-html-css-team-project/assets/img-1_mob@2x-24dfe934.jpg 2x"
+        />
+
+        <img src="/html_css-bcon_58-html-css-team-project/assets/img-1_mob-70bbca82.jpg" loading="lazy" alt="Shot of a blue sofa and a round table" width="704"
+          height="396" />
+      </picture>
+    </div>
+  </div>
+</section>
+    </main>
+    <footer>
+      <div class="container footer-container scrollto" id="contacts">
+  <div class="footer-first">
+    <a class="logo-link" href="./index.html" aria-label="Site Logo">
+      <svg class="footer-logo logo" width="100" height="16">
+        <use href="/html_css-bcon_58-html-css-team-project/assets/sprite-a74dc092.svg#icon-logo"></use>
+      </svg>
+    </a>
+    <ul class="footer-soc-list">
+      <li class="footer-soc-item">
+        <a class="footer-soc-link" rel="noopener noreferrer" target="_blank" href="https://uk-ua.facebook.com/"
+          aria-label="Facebook link">
+          <svg class="footer-icons" width="28" height="28">
+            <use href="/html_css-bcon_58-html-css-team-project/assets/sprite-a74dc092.svg#icon-facebook-logo"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer-soc-item">
+        <a class="footer-soc-link" rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/"
+          aria-label="Instagram link">
+          <svg class="footer-icons" width="28" height="28">
+            <use href="/html_css-bcon_58-html-css-team-project/assets/sprite-a74dc092.svg#icon-instagram-logo"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="footer-soc-item">
+        <a class="footer-soc-link" rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/"
+          aria-label="Youtube link">
+          <svg class="footer-icons" width="28" height="28">
+            <use href="/html_css-bcon_58-html-css-team-project/assets/sprite-a74dc092.svg#icon-youtube-logo"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <nav class="footer-nav">
+    <ul class="footer-nav-list">
+      <li class="footer-nav-item">
+        <a class="footer-nav-link" href="#about-us">About us</a>
+      </li>
+      <li class="footer-nav-item">
+        <a class="footer-nav-link" href="#products">Our products</a>
+      </li>
+      <li class="footer-nav-item">
+        <a class="footer-nav-link" href="#prices">Prices</a>
+      </li>
+      <li class="footer-nav-item">
+        <a class="footer-nav-link" href="#bestsellers">Bestsellers</a>
+      </li>
+      <li class="footer-nav-item">
+        <a class="footer-nav-link" href="#reviews">Reviews</a>
+      </li>
+    </ul>
+  </nav>
+
+  <address class="footer-address">
+    <ul class="footer-address-map">
+      <li class="address-map-item">
+        <a class="address-map-link" target="_blank" href="https://goo.gl/maps/BCJT5GUQSQiAQSPH6">
+          Obolonsky Prospect, 14, Kyiv
+        </a>
+      </li>
+      <li class="address-map-item">
+        <p class="address-map-link">Daily 10:00-21:00</p>
+      </li>
+    </ul>
+
+    <ul class="footer-address-tel">
+      <li class="address-tel-item">
+        <a class="address-tel-link" target="_blank" href="tel:+380669384758">+380669384758</a>
+      </li>
+      <li class="address-tel-item">
+        <a class="address-tel-link" target="_blank" href="tel:+380679384758">+380679384758</a>
+      </li>
+    </ul>
+
+    <a class="address-email" target="_blank" href="mailto:minimal.furniture@gmail.com">
+      minimal.furniture@gmail.com
+    </a>
+  </address>
+  <div class="footer-box">
+    <p class="footer-text">
+      By using this website, you agree to the
+      <a class="footer-link" href="#">Terms of Service</a>
+      and
+      <a class="footer-link" href="#">Privacy Policy</a>
+    </p>
+  </div>
+</div>
+    </footer>
+    <div class="mobile-menu js-menu-container" id="mobile-menu">
+  <div class="wrap-header">
+    <svg class="header-logo-icon" width="100" height="16" aria-label="logo">
+      <a class="header-logo link" href="./index.html"></a>
+      <use href="/html_css-bcon_58-html-css-team-project/assets/sprite-a74dc092.svg#icon-logo"></use>
+    </svg>
+    <button class="mobile-menu-close-btn js-close-menu" type="button">
+      <svg
+        class="mobile-menu-close-icon"
+        width="32"
+        height="32"
+        aria-label="close mobile menu icon"
+      >
+        <use href="/html_css-bcon_58-html-css-team-project/assets/sprite-a74dc092.svg#icon-x"></use>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="mobile-menu-navigation">
+    <ul class="mobile-menu-nav-list list">
+      <li class="mobile-menu-nav-list-item">
+        <a class="mobile-menu-link" href="#about-us">About us</a>
+      </li>
+      <li class="mobile-menu-nav-list-item">
+        <a class="mobile-menu-link" href="#products">Our products</a>
+      </li>
+      <li class="mobile-menu-nav-list-item">
+        <a class="mobile-menu-link" href="#prices">Prices</a>
+      </li>
+      <li class="mobile-menu-nav-list-item">
+        <a class="mobile-menu-link" href="#bestsellers">Bestsellers</a>
+      </li>
+      <li class="mobile-menu-nav-list-item">
+        <a class="mobile-menu-link" href="#reviews">Reviews</a>
+      </li>
+      <li class="mobile-menu-nav-list-item">
+        <a class="mobile-menu-link" href="#contacts">Contacts</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+    <!-- Mobile menu script -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
+
+    
+  </body>
+</html>
